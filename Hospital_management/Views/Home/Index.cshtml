@@ -1,0 +1,52 @@
+﻿@using Hospital_management.CustomModels
+
+@model List<CustomDoctor>
+
+<div class="container mt-25">
+
+    @if (Model.Count > 0)
+    {
+        <h2 class="text-center title">Həkimlər</h2>
+
+        <div class="table-wrapper table-wrapper-dark">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>№ <i class="fas fa-sort"></i></th>
+                        <th>Ad <i class="fas fa-sort"></i></th>
+                        <th>Soyad <i class="fas fa-sort"></i></th>
+                        <th>Vəzifə</th>
+                        <th>Təcrübə <i class="fas fa-sort"></i></th>
+                        <th>Təyinat</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @{
+                        foreach (var doctor in Model)
+                        {
+                            <tr>
+                                <td>@(Model.IndexOf(doctor) + 1)</td>
+                                <td>@doctor.Name</td> 
+                                <td>@doctor.Surname</td>
+                                <td>@doctor.Position</td>
+                                <td>@doctor.Experience</td>
+                                <td class="d-flex gap-15 align-items-center">
+                                    <button class="btn btn-custom btn-green w-100 makeAppointment-btn" id="@doctor.Id">
+                                        Görüş Təyin Et
+                                        <i class="fas fa-calendar-alt ml-15"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <h4 class="text-center" style="color: #e62e2e;">Təəssüfki heç bir həkim görüş üçün uyğun deyil.</h4>
+    }
+
+</div>

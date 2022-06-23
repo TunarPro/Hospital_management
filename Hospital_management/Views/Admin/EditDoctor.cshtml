@@ -1,0 +1,32 @@
+﻿@using Hospital_management.CustomModels
+@{
+    Layout = "_LayoutAdmin";
+}
+@model CustomDoctor
+
+<div class="container mt-25" style="max-width: 1000px">
+    <h2 class="text-center title">Həkimi redaktə et</h2>
+    <form asp-action="EditDoctor" asp-controller="Admin"asp-route-id="@Model.Id" method="post">
+        <label for="doctorName" class="form-label">Ad</label>
+        <input asp-for="Name" class="form-element" id="doctorName">
+        <span asp-validation-for="Name" class="mb-15 validation-text d-block"></span>
+
+        <label for="doctorSurname" class="form-label">Soyad</label>
+        <input asp-for="Surname" class="form-element" id="doctorSurname">
+        <span asp-validation-for="Surname" class="mb-15 validation-text d-block"></span>
+
+        <label for="doctorAge" class="form-label">Yaş</label>
+        <input asp-for="Age" class="form-element" id="doctorAge">
+        <span asp-validation-for="Age" class="mb-15 validation-text d-block"></span>
+
+        <label for="doctorPosition" class="form-label">Vəzifə</label>
+        <input asp-for="Position" class="form-element" id="doctorPosition">
+        <span asp-validation-for="Position" class="mb-15 validation-text d-block"></span>
+
+        <label for="doctorExperience" class="form-label">Təcrübə</label>
+        <input asp-for="Experience" class="form-element" id="doctorExperience">
+        <span asp-validation-for="Experience" class="mb-25 validation-text d-block"></span>
+
+        <button class="btn btn-custom btn-green">Təsdiq Et</button>
+    </form>
+</div>

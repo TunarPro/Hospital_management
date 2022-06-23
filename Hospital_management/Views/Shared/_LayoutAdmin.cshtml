@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Sweet Alert Library CDN-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="/css/customLibrary.css">
+    <link rel="stylesheet" href="/css/mainAdmin.css">
+    <title>Admin</title>
+</head>
+
+<body>
+    <span id="response" result="@ViewBag.Result"></span>
+
+    <nav>
+        <div class="nav-container d-flex justify-content-between align-items-center py-15">
+            <div class="nav-container-left">
+                <h5>Admin</h5>
+            </div>
+            <div class="nav-container-right d-flex gap-45">
+                <ul class="nav-list d-flex align-items-center gap-25">
+                    <li class="nav-item">
+                        <a href="/Admin" class="nav-link">Həkimlər siyahısı</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Admin/AddDoctor" class="nav-link">Həkim əlavə et</a>
+                    </li>
+                </ul>
+
+                <form asp-action="Exit" asp-controller="User" asp-antiforgery="true" method="post">
+                    <button type="button" class="btn btn-custom btn-red logout-btn">Çıxış Et</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/customFunction.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+</body>
+</html>

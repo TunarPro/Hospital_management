@@ -1,0 +1,23 @@
+﻿@model User
+
+<nav>
+    <div class="nav-container d-flex justify-content-between align-items-center py-15">
+        <div class="nav-container-left">
+            <h5 class="font-weight-bold">Hospital</h5>
+        </div>
+        <div class="nav-container-right d-flex gap-45">
+            <div class="user-menu-container position-relative">
+                <i class="fas fa-user user-menu"></i>
+                <ul class="user-menu-list">
+                    <li class="user-menu-item">
+                        @Model.UsersName
+                    </li>
+                </ul>
+            </div>
+
+            <form asp-action="Exit" asp-controller="User" asp-antiforgery="true" method="post">
+                <button type="button" class="btn btn-custom btn-red logout-btn">Çıxış Et</button>
+            </form>
+        </div>
+    </div>
+</nav>

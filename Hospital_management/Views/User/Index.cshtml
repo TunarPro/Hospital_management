@@ -1,0 +1,48 @@
+﻿@using Hospital_management.CustomModels
+@{
+    Layout = null;
+}
+
+@model SigninUser
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/customLibrary.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h4 class="text-center mb-25">Hospital</h4>
+
+        <form asp-action="Login" asp-controller="User" method="post" class="d-flex flex-column sign-in-form">
+            <label for="sign-in-userName" class="form-label">İstifadəçi adı</label>
+            <input asp-for="UserName" id="sign-in-userName" class="form-element">
+            <span asp-validation-for="UserName" class="mb-15 validation-text d-block"></span>
+
+            <label for="sign-in-userPassword" class="form-label">Şifrə</label>
+            <input type="password" asp-for="Password" id="sign-in-userPassword" class="form-element">
+            <span asp-validation-for="Password" class="mb-15 validation-text d-block"></span>
+
+            <button class="btn btn-custom btn-green">Təsdiq Et</button>
+        </form>
+
+        <a href="/User/Registration" class="btn btn-custom btn-blue mt-15 w-100 register-btn">Qeydiyyatdan Keç</a>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/customFunction.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+</body>
+</html>

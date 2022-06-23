@@ -1,0 +1,45 @@
+﻿@using Hospital_management.CustomClasses
+@model List<AppointmentInfo>
+
+<div class="container mt-25">
+
+    @if (Model.Count > 0)
+    {
+        <h2 class="text-center title">Xəstələr ilə təyinatlar</h2>
+
+        <div class="table-wrapper table-wrapper-grey">
+            <table class="table table-grey">
+                <thead>
+                    <tr>
+                        <th>№ <i class="fas fa-sort"></i></th>
+                        <th>Ad <i class="fas fa-sort"></i></th>
+                        <th>Soyad <i class="fas fa-sort"></i></th>
+                        <th>Telefon</th>
+                        <th>Tarix <i class="fas fa-sort"></i></th>
+                        <th>Saat</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @{
+                        foreach (var appointment in Model)
+                        {
+                            <tr>
+                                <td>@(Model.IndexOf(appointment) + 1)</td>
+                                <td>@appointment.PatientName</td>
+                                <td>@appointment.PatientSurname</td>
+                                <td>@appointment.PatientPhone</td>
+                                <td>@appointment.Date</td>
+                                <td>@appointment.Time</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <h4 class="text-center" style="color: #e62e2e;">Sizinlə görüşü olan xəstə yoxdur.</h4>
+    }
+</div>
